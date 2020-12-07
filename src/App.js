@@ -65,7 +65,7 @@ function App() {
           value={formData.name}
         />
         <input
-          type="text-area"
+          type="textarea"
           onChange={e => setFormData({ ...formData, 'description': e.target.value})}
           placeholder="Note description"
           value={formData.description}
@@ -79,10 +79,12 @@ function App() {
       <div className="current-notes">
         {
           notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+            <div className="note-info" key={note.id || note.name}>
+              <div className="note-text">
+                <h2>{note.name}</h2>
+                <p>{note.description}</p>
+                <button onClick={() => deleteNote(note)}>Delete note</button>
+              </div>
               {
                 note.image && <img src={note.image} alt="" style={{width: 400}} />
               }

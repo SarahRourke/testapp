@@ -17,11 +17,12 @@ h1 {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  /* justify-content: center; */
+  /* align-items: stretch; */
   background-color: #f4f3ee;
   border-left: #cad2c5 solid 5px;
   max-height: 80vh;
+  
 }
 input {
   margin: 20px 20px;
@@ -30,11 +31,13 @@ input {
 }
 
 button {
-  max-width: 30%;
-  margin: 10px;
-  align-self: center;
+  max-width: 30em;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  align-self: flex-end;
   border: white;
   background-color: white;
+  
 }
 
 .current-notes {
@@ -44,18 +47,40 @@ button {
   order: 2;
   width: 50%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   max-height: 80vh;
 }
 
+.note-info {
+  display: flex;
+  flex-flow: row;
+}
 
-.current-notes img {
-  max-width: 100px;
+.note-text {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  order: 2;
+  align-items: flex-start;
+  justify-content: space-between; 
+}
+
+
+
+/* .note-text button {
+  justify-self: flex-end;
+} */
+
+.note-info img {
+  max-width: 30%;
+  order: 1;
   height: auto;
   float: left;
-  flex: 25%;
+  /* flex: 40%; */
   margin: 15px;
 }
+
+
 
 .signout-button {
   order: 4;
