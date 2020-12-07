@@ -36,19 +36,16 @@ button {
 }
 
 .current-notes {
- 
+  overflow-y: scroll;
   background-color: #f4f3ee;
   flex: 48%;
   order: 2;
   width: 50%;
-  scroll-behavior: auto;
   display: flex;
   flex-flow: row wrap;
 }
 
-.current-notes p {
-  align-self: right;
-}
+
 .current-notes img {
   max-width: 100px;
   height: auto;
