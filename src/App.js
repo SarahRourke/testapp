@@ -58,22 +58,25 @@ function App() {
   return (
     <div className="App">
       <h1>My Notes App</h1>
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
-        value={formData.description}
-      />
-      <input 
-        type="file"
-        onChange={onChange}
-      />
-      <button onClick={createNote}>Create Note</button>
-      <div style={{marginBottom: 30}}>
+      <div className="forminput">
+        <input
+          onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+          placeholder="Note name"
+          value={formData.name}
+        />
+        <input
+          type="text-area"
+          onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+          placeholder="Note description"
+          value={formData.description}
+        />
+        <input 
+          type="file"
+          onChange={onChange}
+        />
+        <button onClick={createNote}>Create Note</button>
+      </div>
+      <div className="current-notes">
         {
           notes.map(note => (
             <div key={note.id || note.name}>
@@ -87,7 +90,9 @@ function App() {
           ))
         }
       </div>
-      <AmplifySignOut />
+        <div className="signout-button">
+          <AmplifySignOut />
+        </div>
     </div>
   );
 }

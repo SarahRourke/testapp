@@ -1,38 +1,65 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #cad2c5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  flex: 100%;
+  order: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.forminput {
+  flex: 48%;
+  order: 3;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: stretch;
+  background-color: #f4f3ee;
+  border-left: #cad2c5 solid 5px;
+}
+input {
+  margin: 20px 20px;
+  border: white;
+  height: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  max-width: 30%;
+  margin: 10px;
+  align-self: center;
+  border: white;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current-notes {
+ 
+  background-color: #f4f3ee;
+  flex: 48%;
+  order: 2;
+  width: 50%;
+  scroll-behavior: auto;
+  display: flex;
+  flex-flow: row wrap;
 }
+
+.current-notes p {
+  align-self: right;
+}
+.current-notes img {
+  max-width: 100px;
+  height: auto;
+  float: left;
+  flex: 25%;
+  margin: 15px;
+}
+
+.signout-button {
+  order: 4;
+  flex: 100%;
+  background-color: #cad2c5;
+}
+
