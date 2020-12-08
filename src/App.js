@@ -5,17 +5,20 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
+//initialize for, state as empty strings
 const initialFormState = { name: '', description: '' }
 
 
 function App() {
   const [notes, setNotes] = useState([]);
+  //formData is null therefore the state is emptry strings
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
     fetchNotes();
   }, []);
 
+  //get all notes
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
     const notesFromAPI = apiData.data.listNotes.items;
@@ -28,7 +31,7 @@ function App() {
     }))
     setNotes(apiData.data.listNotes.items);
   }
-
+  //create new note w/ image
   async function createNote() {
     if (!formData.name || !formData.description) return;
     await API.graphql({ query: createNoteMutation, variables: { input: formData } });
@@ -36,16 +39,18 @@ function App() {
       const image = await Storage.get(formData.image);
       formData.image = image;
     }
+    //setNotes ...notes - iterates over note objects and adds it to the end of all notes
     setNotes([ ...notes, formData ]);
+    //onChange tracks changes to initialFormState and when submitted represents formData
     setFormData(initialFormState);
   }
-
+  //delete ntoes by id
   async function deleteNote({ id }) {
     const newNotesArray = notes.filter(note => note.id !== id);
     setNotes(newNotesArray);
     await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
   }
-
+  //
   async function onChange(e) {
     if (!e.target.files[0]) return
     const file = e.target.files[0];
