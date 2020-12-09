@@ -7,6 +7,6 @@ This is the first app in my aws self-challenge. I want to spend the next year or
 
 The build process was very simple. Streamlined continuous integrated deploys.
 
-Desktop based and less handtyped code.
+Bootstrapped/aws-console based config, and less handtyped code.
 
-
+URL:

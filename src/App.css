@@ -17,8 +17,6 @@ h1 {
   width: 50%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: stretch; */
   background-color: #f4f3ee;
   border-left: #cad2c5 solid 5px;
   max-height: 80vh;
@@ -36,8 +34,7 @@ button {
   margin-bottom: 5%;
   align-self: flex-end;
   border: white;
-  background-color: white;
-  
+  background-color: white; 
 }
 
 .current-notes {
@@ -67,16 +64,11 @@ button {
 
 
 
-/* .note-text button {
-  justify-self: flex-end;
-} */
-
 .note-info img {
   max-width: 30%;
   order: 1;
   height: auto;
   float: left;
-  /* flex: 40%; */
   margin: 15px;
 }
 
