@@ -10,3 +10,10 @@ The build process was very simple. Streamlined continuous integrated deploys.
 Bootstrapped/aws-console based config, and less handtyped code.
 
 URL:
+
+To login as a guest and explore the simple app use the below login:
+
+username: guest
+password: guestpassword
+
+all lowercase*
